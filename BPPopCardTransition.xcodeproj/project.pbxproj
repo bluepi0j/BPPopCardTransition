@@ -11,6 +11,11 @@
 		8169E19B1F3EE925006EF1FF /* BPPopCardTransition.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8169E1981F3EE925006EF1FF /* BPPopCardTransition.podspec */; };
 		8169E19C1F3EE925006EF1FF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8169E1991F3EE925006EF1FF /* LICENSE */; };
 		8169E19D1F3EE925006EF1FF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8169E19A1F3EE925006EF1FF /* README.md */; };
+		8169E1A51F3F4D2D006EF1FF /* BPPopCardTransitionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1A41F3F4D2D006EF1FF /* BPPopCardTransitionsDelegate.swift */; };
+		8169E1A71F3F5021006EF1FF /* BPPopCardAnimtionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1A61F3F5021006EF1FF /* BPPopCardAnimtionDelegate.swift */; };
+		8169E1A91F3F562B006EF1FF /* BPPopCardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1A81F3F562B006EF1FF /* BPPopCardPresentationController.swift */; };
+		8169E1AB1F3F563E006EF1FF /* BPPopCardDismissingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1AA1F3F563E006EF1FF /* BPPopCardDismissingAnimationController.swift */; };
+		8169E1AD1F3F5650006EF1FF /* BPPopCardPresentingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1AC1F3F5650006EF1FF /* BPPopCardPresentingAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		8169E1981F3EE925006EF1FF /* BPPopCardTransition.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BPPopCardTransition.podspec; sourceTree = "<group>"; };
 		8169E1991F3EE925006EF1FF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8169E19A1F3EE925006EF1FF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8169E1A41F3F4D2D006EF1FF /* BPPopCardTransitionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPPopCardTransitionsDelegate.swift; sourceTree = "<group>"; };
+		8169E1A61F3F5021006EF1FF /* BPPopCardAnimtionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPPopCardAnimtionDelegate.swift; sourceTree = "<group>"; };
+		8169E1A81F3F562B006EF1FF /* BPPopCardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPPopCardPresentationController.swift; sourceTree = "<group>"; };
+		8169E1AA1F3F563E006EF1FF /* BPPopCardDismissingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPPopCardDismissingAnimationController.swift; sourceTree = "<group>"; };
+		8169E1AC1F3F5650006EF1FF /* BPPopCardPresentingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPPopCardPresentingAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,11 @@
 		8169E19E1F3EE9C8006EF1FF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8169E1A61F3F5021006EF1FF /* BPPopCardAnimtionDelegate.swift */,
+				8169E1A41F3F4D2D006EF1FF /* BPPopCardTransitionsDelegate.swift */,
+				8169E1A81F3F562B006EF1FF /* BPPopCardPresentationController.swift */,
+				8169E1AC1F3F5650006EF1FF /* BPPopCardPresentingAnimationController.swift */,
+				8169E1AA1F3F563E006EF1FF /* BPPopCardDismissingAnimationController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -160,6 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8169E19D1F3EE925006EF1FF /* README.md in Sources */,
+				8169E1A51F3F4D2D006EF1FF /* BPPopCardTransitionsDelegate.swift in Sources */,
+				8169E1AB1F3F563E006EF1FF /* BPPopCardDismissingAnimationController.swift in Sources */,
+				8169E1AD1F3F5650006EF1FF /* BPPopCardPresentingAnimationController.swift in Sources */,
+				8169E1A71F3F5021006EF1FF /* BPPopCardAnimtionDelegate.swift in Sources */,
+				8169E1A91F3F562B006EF1FF /* BPPopCardPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

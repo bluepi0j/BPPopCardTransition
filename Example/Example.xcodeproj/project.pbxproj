@@ -14,6 +14,8 @@
 		8169E1881F3EE534006EF1FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8169E1861F3EE534006EF1FF /* LaunchScreen.storyboard */; };
 		8169E1A11F3EEC8E006EF1FF /* BPPopCardTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8169E1931F3EE7C5006EF1FF /* BPPopCardTransition.framework */; };
 		8169E1A21F3EEC8E006EF1FF /* BPPopCardTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8169E1931F3EE7C5006EF1FF /* BPPopCardTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8169E1AF1F3FE8D2006EF1FF /* PopCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1AE1F3FE8D2006EF1FF /* PopCardViewController.swift */; };
+		8169E1B11F40016B006EF1FF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169E1B01F40016B006EF1FF /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,8 @@
 		8169E1871F3EE534006EF1FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8169E1891F3EE534006EF1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8169E1931F3EE7C5006EF1FF /* BPPopCardTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BPPopCardTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8169E1AE1F3FE8D2006EF1FF /* PopCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopCardViewController.swift; sourceTree = "<group>"; };
+		8169E1B01F40016B006EF1FF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			children = (
 				8169E17D1F3EE534006EF1FF /* AppDelegate.swift */,
 				8169E17F1F3EE534006EF1FF /* ViewController.swift */,
+				8169E1B01F40016B006EF1FF /* ImageCollectionViewCell.swift */,
+				8169E1AE1F3FE8D2006EF1FF /* PopCardViewController.swift */,
 				8169E1811F3EE534006EF1FF /* Main.storyboard */,
 				8169E1841F3EE534006EF1FF /* Assets.xcassets */,
 				8169E1861F3EE534006EF1FF /* LaunchScreen.storyboard */,
@@ -159,6 +165,8 @@
 			files = (
 				8169E1801F3EE534006EF1FF /* ViewController.swift in Sources */,
 				8169E17E1F3EE534006EF1FF /* AppDelegate.swift in Sources */,
+				8169E1B11F40016B006EF1FF /* ImageCollectionViewCell.swift in Sources */,
+				8169E1AF1F3FE8D2006EF1FF /* PopCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
