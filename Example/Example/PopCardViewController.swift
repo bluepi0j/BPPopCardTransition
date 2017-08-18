@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import BPPopCardTransition
 
 class PopCardViewController: UIViewController {
+    var tranDeleagte:BPPopCardTransitionsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +24,10 @@ class PopCardViewController: UIViewController {
     }
     
 
+
+    @IBAction func dismissVCButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

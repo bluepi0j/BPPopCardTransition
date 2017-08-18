@@ -29,8 +29,57 @@ final class BPPopCardDismissingAnimationController: NSObject, UIViewControllerAn
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let presentingViewController: UIViewController = transitionContext.viewController(forKey: .to)!
+        let presentedViewController: UIViewController = transitionContext.viewController(forKey: .from)!
+        
+        let container = transitionContext.containerView
+        
+        
+        var cellFrame: CGRect = .zero
+        
+        cellFrame = (delegate?.rectZoomPosition())!
+        
+        
+        let imageView: UIImageView = (delegate?.cellImageView())!
+        
+        let resizableSnapshotImageView: UIView = imageView.resizableSnapshotView(from: imageView.bounds, afterScreenUpdates: true, withCapInsets: .zero)!
+        
+        resizableSnapshotImageView.layer.masksToBounds = true
+        resizableSnapshotImageView.layer.cornerRadius = 8;
+        resizableSnapshotImageView.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: resizableSnapshotImageView.frame.size.height)
+
+        container.insertSubview(resizableSnapshotImageView, aboveSubview: presentedViewController.view)
+        
+        let resizableSnapshotView: UIView = presentedViewController.view.resizableSnapshotView(from: presentedViewController.view.bounds, afterScreenUpdates: true, withCapInsets: .zero)!
+        resizableSnapshotView.frame = presentedViewController.view.frame;
+        resizableSnapshotView.layer.masksToBounds = true;
+        resizableSnapshotView.layer.cornerRadius = 8;
+        
+        container.insertSubview(resizableSnapshotView, aboveSubview: presentedViewController.view)
+        presentedViewController.view.removeFromSuperview()
+        
+        UIView.animate(withDuration: 0.6,
+                       delay: 0,
+                       usingSpringWithDamping: animationSpringDampening!,
+                       initialSpringVelocity: animationSpringVelocity!,
+                       options: .curveEaseInOut,
+                       animations: {
+                        resizableSnapshotView.frame = cellFrame
+                        resizableSnapshotImageView.frame = cellFrame;
+                        presentingViewController.view.alpha = 1.0
+                        
+                        
+                        
+        }) { (finished) in
+            resizableSnapshotView.removeFromSuperview()
+            resizableSnapshotImageView.removeFromSuperview()
+            transitionContext.completeTransition(finished)
+        }
+        
         
     }
+        
+    
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration!

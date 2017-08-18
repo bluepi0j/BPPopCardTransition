@@ -91,12 +91,43 @@
                     <view key="view" contentMode="scaleToFill" id="hGh-cK-dsG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-tQ-RS4">
+                                <rect key="frame" x="0.0" y="266" width="375" height="308"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="308" id="A51-Pe-B8T"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-6k-THj">
+                                <rect key="frame" x="169" y="607" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Ess-Fn-hVr"/>
+                                    <constraint firstAttribute="height" constant="30" id="U3O-iq-oNN"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dismissVCButtonPressed:" destination="Tjt-0H-aaS" eventType="touchUpInside" id="TEn-hS-tX3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ac3-5b-cXI" firstAttribute="top" secondItem="q4p-6k-THj" secondAttribute="bottom" constant="30" id="3ON-tC-X5r"/>
+                            <constraint firstItem="q4p-6k-THj" firstAttribute="top" secondItem="Vh8-tQ-RS4" secondAttribute="bottom" constant="33" id="INp-Tx-LfX"/>
+                            <constraint firstItem="q4p-6k-THj" firstAttribute="centerX" secondItem="hGh-cK-dsG" secondAttribute="centerX" id="LDg-l4-RvN"/>
+                            <constraint firstItem="Vh8-tQ-RS4" firstAttribute="leading" secondItem="hGh-cK-dsG" secondAttribute="leading" id="qCE-Oh-8xY"/>
+                            <constraint firstAttribute="trailing" secondItem="Vh8-tQ-RS4" secondAttribute="trailing" id="uUQ-Wl-B6F"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1s2-XB-kOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="899"/>
+            <point key="canvasLocation" x="136.80000000000001" y="897.30134932533736"/>
         </scene>
     </scenes>
     <resources>

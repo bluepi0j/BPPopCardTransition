@@ -17,6 +17,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var selectedCellImageView: UIImageView?
     
+    let transitionDelegate:BPPopCardTransitionsDelegate = BPPopCardTransitionsDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,6 +39,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        // rounded corner
+        cell.contentView.layer.cornerRadius = 8.0
+        cell.contentView.layer.masksToBounds = true
+        
+        // add rounded corner shadow
+        cell.layer.cornerRadius = 8.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowRadius = 5.0
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowOffset = CGSize(width: 0.4, height: 1.0)
+        
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         return cell
     }
     
@@ -46,15 +62,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         selectedCellFrame = collectionView.convert(cell.frame, to: self.view)
         selectedCellImageView = cell.cellImageView
-        
+
         
         let popCardViewController: PopCardViewController = self.storyboard?.instantiateViewController(withIdentifier: "PopCardViewController") as! PopCardViewController
         
-        let delegate:BPPopCardTransitionsDelegate = BPPopCardTransitionsDelegate()
+        transitionDelegate.deleagte = self
         
-        delegate.deleagte = self
-        
-        popCardViewController.transitioningDelegate = delegate
+        popCardViewController.transitioningDelegate = transitionDelegate
         popCardViewController.modalPresentationStyle = .custom
         self.present(popCardViewController, animated: true, completion: nil)
         
@@ -69,4 +83,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
 }
+
+
+
+
+
+
 
