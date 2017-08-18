@@ -78,8 +78,13 @@ class BPPopCardPresentationController: UIPresentationController, UIGestureRecogn
         UIView.animate(withDuration: 0.35, animations: {
             self.presentedView?.frame = CGRect(x: (self.presentedView?.frame.origin.x)! + translationX * 2.2, y: (self.presentedView?.frame.origin.y)!  + translationY * 2.2, width: (self.presentedView?.frame.size.width)!, height: (self.presentedView?.frame.size.height)!)
             }, completion: { (finished) in
-                let generator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-                generator.impactOccurred()
+                if #available(iOS 10.0, *) {
+                    let generator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                    generator.impactOccurred()
+
+                } else {
+                    // Fallback on earlier versions
+                }
                 self.presentedViewController.dismiss(animated: false, completion: {
                 })
             })

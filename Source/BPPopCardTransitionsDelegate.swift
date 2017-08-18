@@ -10,17 +10,18 @@ import Foundation
 
 public final class BPPopCardTransitionsDelegate: NSObject, UIViewControllerTransitioningDelegate {
     
-    public weak var deleagte: BPPopCardAnimtionDelegate?
+    public weak var delegate: BPPopCardAnimtionDelegate?
+    
     // MARK:- UIViewControllerTransitioningDelegate
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let presentedAnimator: BPPopCardPresentingAnimationController = BPPopCardPresentingAnimationController()
-        presentedAnimator.delegate = deleagte
+        presentedAnimator.delegate = delegate
         return presentedAnimator
     }
 
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let dismissedAnimator: BPPopCardDismissingAnimationController = BPPopCardDismissingAnimationController()
-        dismissedAnimator.delegate = deleagte
+        dismissedAnimator.delegate = delegate
         return dismissedAnimator
     }
     

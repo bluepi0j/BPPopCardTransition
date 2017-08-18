@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol BPPopCardAnimtionDelegate: class {
+@objc public protocol BPPopCardAnimtionDelegate: class {
     /**
      *  The rect that the ToView will go to. This should be relative to the view controller.
      *
