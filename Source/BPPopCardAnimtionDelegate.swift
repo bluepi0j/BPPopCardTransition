@@ -19,3 +19,12 @@ import UIKit
     func cellImageView() -> UIImageView
  
 }
+
+extension UIView {
+    public func roundCorners(_ corners: UIRectCorner, withRadius radius:CGFloat) {
+        let path: UIBezierPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask: CAShapeLayer = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+}

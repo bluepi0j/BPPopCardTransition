@@ -28,6 +28,9 @@ class BPPopCardPresentationController: UIPresentationController, UIGestureRecogn
     
     override func presentationTransitionDidEnd(_ completed: Bool) {
         if completed {
+            presentingViewController.view.alpha = 0.7;
+            presentedViewController.view.frame = frameOfPresentedViewInContainerView;
+            presentedViewController.view.roundCorners(.allCorners, withRadius: 8)
             pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
             pan?.delegate = self
             pan?.maximumNumberOfTouches = 1
@@ -94,7 +97,13 @@ class BPPopCardPresentationController: UIPresentationController, UIGestureRecogn
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
+        super.viewWillTransition(to: size, with: coordinator)
+        self.presentedViewController.view.transform = .identity
+        coordinator .animate(alongsideTransition: { (context) in
+            
+        }) { (UIViewControllerTransitionCoordinatorContext) in
+
+        }
     }
     
 }

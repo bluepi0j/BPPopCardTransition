@@ -40,7 +40,7 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
         cellFrame = (delegate?.rectZoomPosition())!
         presentedViewController.view.frame = transitionContext.finalFrame(for: presentedViewController)
         
-//        presentedViewController.view.clipsToBounds = true
+        presentedViewController.view.clipsToBounds = true
         presentedViewController.view.layer.cornerRadius = 8
         
         // snapshot of presentedViewController
