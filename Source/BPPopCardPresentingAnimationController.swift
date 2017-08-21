@@ -104,7 +104,13 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
                         newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: 191.3)
 
                         resizableSnapshotView.frame = transitionContext.finalFrame(for: presentedViewController)
-            
+                        if #available(iOS 10.0, *) {
+                            let generator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                            generator.impactOccurred()
+                            
+                        } else {
+                            // Fallback on earlier versions
+                        }
                         }) { (finished) in
                             containerView.addSubview(presentedViewController.view)
                             resizableSnapshotView.removeFromSuperview()

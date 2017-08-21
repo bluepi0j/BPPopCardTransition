@@ -68,7 +68,13 @@ final class BPPopCardDismissingAnimationController: NSObject, UIViewControllerAn
                         resizableSnapshotImageView.frame = cellFrame;
                         presentingViewController.view.alpha = 1.0
                         
-                        
+                        if #available(iOS 10.0, *) {
+                            let generator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                            generator.impactOccurred()
+                            
+                        } else {
+                            // Fallback on earlier versions
+                        }    
                         
         }) { (finished) in
             resizableSnapshotView.removeFromSuperview()
