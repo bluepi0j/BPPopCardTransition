@@ -30,7 +30,6 @@ class BPPopCardPresentationController: UIPresentationController, UIGestureRecogn
         if completed {
             presentingViewController.view.alpha = 0.7;
             presentedViewController.view.frame = frameOfPresentedViewInContainerView;
-            presentedViewController.view.roundCorners(.allCorners, withRadius: 8)
             pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
             pan?.delegate = self
             pan?.maximumNumberOfTouches = 1

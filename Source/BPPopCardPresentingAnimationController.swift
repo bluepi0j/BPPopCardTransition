@@ -8,6 +8,13 @@
 
 import Foundation
 
+class myImageView: UIImageView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.roundCorners([.topLeft, .topRight], withRadius: 10)
+    }
+}
 
 final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
@@ -21,12 +28,15 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
     
     var duration: TimeInterval?
     
+    var cardCornerRadius: CGFloat?
+    
     override init() {
         super.init()
         shouldFadeBackgroundViewController = true
         animationSpringDampening = 0.77;
         animationSpringVelocity = 2.0;
         duration = 0.3;
+        cardCornerRadius = 8.0
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -41,7 +51,7 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
         presentedViewController.view.frame = transitionContext.finalFrame(for: presentedViewController)
         
         presentedViewController.view.clipsToBounds = true
-        presentedViewController.view.layer.cornerRadius = 8
+        presentedViewController.view.roundCorners(.allCorners, withRadius: cardCornerRadius!)
         
         // snapshot of presentedViewController
         let resizableSnapshotView: UIView = presentedViewController.view.resizableSnapshotView(from: presentedViewController.view.bounds, afterScreenUpdates: true, withCapInsets: .zero)!
@@ -50,14 +60,18 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
         
         
         let imageView: UIImageView = (self.delegate?.cellImageView())!
+        let newImage: myImageView = myImageView(frame: imageView.frame)
         
-        let resizableSnapshotImageView: UIView = imageView.resizableSnapshotView(from: imageView.bounds, afterScreenUpdates: true, withCapInsets: .zero)!
-        resizableSnapshotImageView.frame = cellFrame
+        newImage.image = imageView.image
+        newImage.contentMode = .scaleAspectFill
+//        let resizableSnapshotImageView: UIView = imageView.resizableSnapshotView(from: imageView.bounds, afterScreenUpdates: true, withCapInsets: .zero)!
+        newImage.frame = cellFrame
  
-        resizableSnapshotImageView.layer.masksToBounds = true
-        resizableSnapshotImageView.layer.cornerRadius = 8;
+        newImage.layer.masksToBounds = true
+//        newImage.roundCorners([.topLeft, .topRight], withRadius: 8)
+//        newImage.roundCorners(.allCorners, withRadius: cardCornerRadius!)
 
-        containerView.addSubview(resizableSnapshotImageView)
+        containerView.addSubview(newImage)
         
         
         UIView.animate(withDuration: 0.3) { 
@@ -73,11 +87,11 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
                        initialSpringVelocity: animationSpringVelocity!,
                        options: .curveEaseInOut,
                        animations: {
-                        resizableSnapshotImageView.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: resizableSnapshotImageView.frame.size.height)
+                        newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: 191.3)
                         
                         
         }) { (finished) in
-            resizableSnapshotImageView.removeFromSuperview()
+            newImage.removeFromSuperview()
         }
         
         
@@ -87,19 +101,16 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
                        initialSpringVelocity: animationSpringVelocity!,
                        options: .curveEaseInOut,
                        animations: {
-                        resizableSnapshotImageView.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: resizableSnapshotImageView.frame.size.height)
-                        
+                        newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: 191.3)
+
                         resizableSnapshotView.frame = transitionContext.finalFrame(for: presentedViewController)
             
                         }) { (finished) in
                             containerView.addSubview(presentedViewController.view)
                             resizableSnapshotView.removeFromSuperview()
-                            resizableSnapshotImageView.removeFromSuperview()
+                            newImage.removeFromSuperview()
                             transitionContext.completeTransition(finished)
                         }
-        
-    
-    
     }
 
 
