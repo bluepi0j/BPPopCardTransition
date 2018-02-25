@@ -12,10 +12,14 @@ import BPPopCardTransition
 class PopCardViewController: UIViewController {
     var tranDeleagte:BPPopCardTransitionsDelegate?
 
+    @IBOutlet var bannerImageView: UIImageView!
+    var bannerImage: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        if bannerImage != nil {
+            self.bannerImageView.image = bannerImage
+        }
     }
 
     override func didReceiveMemoryWarning() {

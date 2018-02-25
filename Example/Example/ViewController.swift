@@ -66,9 +66,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let popCardViewController: PopCardViewController = self.storyboard?.instantiateViewController(withIdentifier: "PopCardViewController") as! PopCardViewController
         
-        transitionDelegate.deleagte = self
+        transitionDelegate.delegate = self
         
         popCardViewController.transitioningDelegate = transitionDelegate
+        popCardViewController.bannerImage = self.selectedCellImageView!.image
         popCardViewController.modalPresentationStyle = .custom
         self.present(popCardViewController, animated: true, completion: nil)
         
