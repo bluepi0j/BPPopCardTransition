@@ -33,7 +33,7 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
     override init() {
         super.init()
         shouldFadeBackgroundViewController = true
-        animationSpringDampening = 0.77;
+        animationSpringDampening = 0.79;
         animationSpringVelocity = 2.0;
         duration = 0.3;
         cardCornerRadius = 8.0

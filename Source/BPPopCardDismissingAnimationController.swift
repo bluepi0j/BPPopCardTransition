@@ -23,7 +23,7 @@ final class BPPopCardDismissingAnimationController: NSObject, UIViewControllerAn
     override init() {
         super.init()
         shouldFadeBackgroundViewController = true
-        animationSpringDampening = 0.77;
+        animationSpringDampening = 0.79;
         animationSpringVelocity = 2.0;
         duration = 0.3;
     }
@@ -46,7 +46,8 @@ final class BPPopCardDismissingAnimationController: NSObject, UIViewControllerAn
         
         resizableSnapshotImageView.layer.masksToBounds = true
         resizableSnapshotImageView.layer.cornerRadius = 8;
-        resizableSnapshotImageView.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: resizableSnapshotImageView.frame.size.height)
+        resizableSnapshotImageView.contentMode = .scaleAspectFill
+        resizableSnapshotImageView.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: delegate!.popCardViewBannerHeight())
 
         container.insertSubview(resizableSnapshotImageView, aboveSubview: presentedViewController.view)
         
@@ -58,7 +59,7 @@ final class BPPopCardDismissingAnimationController: NSObject, UIViewControllerAn
         container.insertSubview(resizableSnapshotView, aboveSubview: presentedViewController.view)
         presentedViewController.view.removeFromSuperview()
         
-        UIView.animate(withDuration: 0.6,
+        UIView.animate(withDuration: 0.65,
                        delay: 0,
                        usingSpringWithDamping: animationSpringDampening!,
                        initialSpringVelocity: animationSpringVelocity!,
