@@ -4,8 +4,6 @@
 [![Version](https://img.shields.io/cocoapods/v/BPPopCardTransition.svg?style=flat)](http://cocoapods.org/pods/BPPopCardTransition)
 [![License](https://img.shields.io/cocoapods/l/BPPopCardTransition.svg?style=flat)](http://cocoapods.org/pods/BPPopCardTransition)
 [![Platform](https://img.shields.io/cocoapods/p/BPPopCardTransition.svg?style=flat)](http://cocoapods.org/pods/BPPopCardTransition)
-![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)
-
 ## Overview
 
 
