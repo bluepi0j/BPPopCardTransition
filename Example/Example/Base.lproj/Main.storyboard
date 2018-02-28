@@ -92,17 +92,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-tQ-RS4">
-                                <rect key="frame" x="0.0" y="266" width="375" height="308"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="308" id="A51-Pe-B8T"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
-Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-6k-THj">
                                 <rect key="frame" x="169" y="607" width="37" height="30"/>
                                 <constraints>
@@ -114,6 +103,12 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                     <action selector="dismissVCButtonPressed:" destination="Tjt-0H-aaS" eventType="touchUpInside" id="TEn-hS-tX3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKE-Hd-2k3">
+                                <rect key="frame" x="109.5" y="315" width="156.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M94-v9-eAh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <constraints>
@@ -124,13 +119,12 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ac3-5b-cXI" firstAttribute="top" secondItem="q4p-6k-THj" secondAttribute="bottom" constant="30" id="3ON-tC-X5r"/>
-                            <constraint firstItem="q4p-6k-THj" firstAttribute="top" secondItem="Vh8-tQ-RS4" secondAttribute="bottom" constant="33" id="INp-Tx-LfX"/>
+                            <constraint firstAttribute="trailing" secondItem="M94-v9-eAh" secondAttribute="trailing" id="4C9-89-np0"/>
+                            <constraint firstItem="gKE-Hd-2k3" firstAttribute="centerX" secondItem="hGh-cK-dsG" secondAttribute="centerX" id="C4e-yD-AU6"/>
                             <constraint firstItem="q4p-6k-THj" firstAttribute="centerX" secondItem="hGh-cK-dsG" secondAttribute="centerX" id="LDg-l4-RvN"/>
+                            <constraint firstItem="M94-v9-eAh" firstAttribute="leading" secondItem="hGh-cK-dsG" secondAttribute="leading" id="MOD-rI-dhe"/>
                             <constraint firstItem="M94-v9-eAh" firstAttribute="top" secondItem="hGh-cK-dsG" secondAttribute="top" id="POj-D9-itX"/>
-                            <constraint firstItem="M94-v9-eAh" firstAttribute="leading" secondItem="Vh8-tQ-RS4" secondAttribute="leading" id="jOh-Mv-ULP"/>
-                            <constraint firstItem="M94-v9-eAh" firstAttribute="trailing" secondItem="Vh8-tQ-RS4" secondAttribute="trailing" id="mst-pL-gEh"/>
-                            <constraint firstItem="Vh8-tQ-RS4" firstAttribute="leading" secondItem="hGh-cK-dsG" secondAttribute="leading" id="qCE-Oh-8xY"/>
-                            <constraint firstAttribute="trailing" secondItem="Vh8-tQ-RS4" secondAttribute="trailing" id="uUQ-Wl-B6F"/>
+                            <constraint firstItem="gKE-Hd-2k3" firstAttribute="top" secondItem="M94-v9-eAh" secondAttribute="bottom" constant="48" id="a7r-o1-dpP"/>
                         </constraints>
                     </view>
                     <connections>

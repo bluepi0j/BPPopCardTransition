@@ -87,7 +87,7 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
                        initialSpringVelocity: animationSpringVelocity!,
                        options: .curveEaseInOut,
                        animations: {
-                        newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: 191.3)
+                        newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: self.delegate!.popCardViewBannerHeight())
                         
                         
         }) { (finished) in
@@ -101,7 +101,7 @@ final class BPPopCardPresentingAnimationController: NSObject, UIViewControllerAn
                        initialSpringVelocity: animationSpringVelocity!,
                        options: .curveEaseInOut,
                        animations: {
-                        newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: 191.3)
+                        newImage.frame = CGRect(x: transitionContext.finalFrame(for: presentedViewController).origin.x, y:transitionContext.finalFrame(for: presentedViewController).origin.y, width: transitionContext.finalFrame(for: presentedViewController).size.width, height: self.delegate!.popCardViewBannerHeight())
 
                         resizableSnapshotView.frame = transitionContext.finalFrame(for: presentedViewController)
                         if #available(iOS 10.0, *) {

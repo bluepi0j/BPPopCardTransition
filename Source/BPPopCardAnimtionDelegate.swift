@@ -17,6 +17,7 @@ import UIKit
      */
     func rectZoomPosition() -> CGRect
     func cellImageView() -> UIImageView
+    func popCardViewBannerHeight() -> CGFloat
  
 }
 

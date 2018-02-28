@@ -75,6 +75,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    // MARK: - BPPopCardAnimtionDelegate
     func rectZoomPosition() -> CGRect {
         return selectedCellFrame!
     }
@@ -82,7 +83,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func cellImageView() -> UIImageView {
         return selectedCellImageView!
     }
-
+    
+    func popCardViewBannerHeight() -> CGFloat {
+        return CGFloat(267)
+    }
+    
 }
 
 
