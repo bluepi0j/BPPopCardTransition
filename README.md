@@ -9,8 +9,8 @@
 ## Overview
 
 
-![Overview](https://raw.githubusercontent.com/bluepi0j/BPPopCardTransition/master/Images/example1.gif)
-![Overview](https://raw.githubusercontent.com/bluepi0j/BPPopCardTransition/master/Images/example2.gif)
+![Overview](https://raw.githubusercontent.com/bluepi0j/BPPopCardTransition/master/Images/example1.GIF)
+![Overview](https://raw.githubusercontent.com/bluepi0j/BPPopCardTransition/master/Images/example2.GIF)
 
 ## Example
 
