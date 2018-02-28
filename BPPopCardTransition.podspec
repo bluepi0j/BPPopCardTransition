@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Simple iOS11 style card transition
+Simple iOS11 style card transition with different design.
 DESC
 
   s.homepage         = 'https://github.com/bluepi0j/BPPopCardTransition'
