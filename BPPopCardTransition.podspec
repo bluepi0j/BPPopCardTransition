@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'BPPopCardTransition'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of BPPopCardTransition.'
+  s.summary          = 'Simple iOS11 style card transition'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+Simple iOS11 style card transition
+DESC
 
   s.homepage         = 'https://github.com/bluepi0j/BPPopCardTransition'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'bluepi0j' => 'vicwang95@gmail.com' }
+  s.author           = { 'bluepi0j' => 'bluepi0j@gmail.com' }
   s.source           = { :git => 'https://github.com/bluepi0j/BPPopCardTransition.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
